@@ -66,7 +66,7 @@ typedef const struct dispatch_source_type_s *dispatch_source_type_t;
 
 /*!
  * @const DISPATCH_SOURCE_TYPE_DATA_ADD
- * @discussion A dispatch source that coalesces data obtained via calls to
+ * @discussion A dispatch source that coalesces(合并) data obtained(获得) via calls to
  * dispatch_source_merge_data(). An ADD is used to coalesce the data.
  * The handle is unused (pass zero for now).
  * The mask is unused (pass zero for now).
@@ -447,7 +447,7 @@ dispatch_source_testcancel(dispatch_source_t source);
  * @function dispatch_source_get_handle
  *
  * @abstract
- * Returns the underlying system handle associated with this dispatch source.
+ * Returns the underlying(潜在的) system handle associated with this dispatch source.
  *
  * @param source
  * The result of passing NULL in this parameter is undefined.
@@ -509,7 +509,7 @@ dispatch_source_get_mask(dispatch_source_t source);
  * @abstract
  * Returns pending data for the dispatch source.
  *
- * @discussion
+ * * @discussion
  * This function is intended to be called from within the event handler block.
  * The result of calling this function outside of the event handler callback is
  * undefined.
@@ -586,10 +586,10 @@ dispatch_source_merge_data(dispatch_source_t source, unsigned long value);
  * The nanosecond interval for the timer.
  *
  * @param leeway
- * A hint given to the system by the application for the amount of leeway, in
- * nanoseconds, that the system may defer the timer in order to align with other
- * system activity for improved system performance or power consumption. (For
- * example, an application might perform a periodic task every 5 minutes, with
+ * A hint given to the system by the application for the amount of leeway(余地), in
+ * nanoseconds(纳秒), that the system may defer(推迟) the timer in order to align with other
+ * system activity for improved system performance or power consumption(消费). (For
+ * example, an application might perform a periodic(周期的) task every 5 minutes, with
  * a leeway of up to 30 seconds.)  Note that some latency is to be expected for
  * all timers even when a leeway value of zero is specified.
  */

@@ -43,9 +43,9 @@ __BEGIN_DECLS
  * Creates new counting semaphore with an initial value.
  *
  * @discussion
- * Passing zero for the value is useful for when two threads need to reconcile
- * the completion of a particular event. Passing a value greather than zero is
- * useful for managing a finite pool of resources, where the pool size is equal
+ * Passing zero for the value is useful for when two threads need to reconcile(使...吻合)
+ * the completion of a particular(特别的) event. Passing a value greather than zero is
+ * useful for managing a finite(有限的) pool of resources, where the pool size is equal
  * to the value.
  *
  * @param value

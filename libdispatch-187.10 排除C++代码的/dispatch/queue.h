@@ -575,7 +575,7 @@ dispatch_main(void);
  * is undefined.
  *
  * @param when
- * A temporal milestone returned by dispatch_time() or dispatch_walltime().
+ * A temporal(暂时的) milestone(里程碑) returned by dispatch_time() or dispatch_walltime().
  *
  * @param queue
  * A queue to which the given block will be submitted at the specified time.
@@ -630,7 +630,7 @@ dispatch_after_f(dispatch_time_t when,
 /*!
  * @functiongroup Dispatch Barrier API
  * The dispatch barrier API is a mechanism for submitting barrier blocks to a
- * dispatch queue, analogous to the dispatch_async()/dispatch_sync() API.
+ * dispatch queue, analogous(类似的) to the dispatch_async()/dispatch_sync() API.
  * It enables the implementation of efficient reader/writer schemes.
  * Barrier blocks only behave specially when submitted to queues created with
  * the DISPATCH_QUEUE_CONCURRENT attribute; on such a queue, a barrier block
@@ -769,7 +769,7 @@ dispatch_barrier_sync_f(dispatch_queue_t queue,
 /*!
  * @functiongroup Dispatch queue-specific contexts
  * This API allows different subsystems to associate context to a shared queue
- * without risk of collision and to retrieve that context from blocks executing
+ * without risk(风险) of collision(碰撞,冲突,接触) and to retrieve(检索) that context from blocks executing
  * on that queue or any of its child queues in the target queue hierarchy.
  */
 
