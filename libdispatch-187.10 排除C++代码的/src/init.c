@@ -55,6 +55,7 @@ dispatch_atfork_parent(void)
 {
 }
 
+ // dummy 虚拟的
 void
 dummy_function(void)
 {
@@ -360,7 +361,7 @@ dispatch_source_type_timer_init(dispatch_source_t ds,
 {
 	ds->ds_refs = calloc(1ul, sizeof(struct dispatch_timer_source_refs_s));
 	if (slowpath(!ds->ds_refs)) return;
-	ds->ds_needs_rearm = true;
+	ds->ds_needs_rearm = true; // rearm 重新整装,再填装
 	ds->ds_is_timer = true;
 	ds_timer(ds->ds_refs).flags = mask;
 }

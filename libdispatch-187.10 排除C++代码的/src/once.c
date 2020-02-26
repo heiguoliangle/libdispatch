@@ -42,6 +42,7 @@ dispatch_once(dispatch_once_t *val, dispatch_block_t block)
 }
 #endif
 
+
 DISPATCH_NOINLINE
 void
 dispatch_once_f(dispatch_once_t *val, void *ctxt, dispatch_function_t func)
@@ -56,9 +57,15 @@ dispatch_once_f(dispatch_once_t *val, void *ctxt, dispatch_function_t func)
 	_dispatch_thread_semaphore_t sema;
 // 6. Compare and Swap（用于首次更改请求）
 	if (dispatch_atomic_cmpxchg(vval, NULL, &dow)) {
+		/*
+		 dispatch_atomic_cmpxchg:
+		 如果 vval == null, vval = dow,返回true
+		 如果 vval != null, 返回false
+		 */
+		
 		dispatch_atomic_acquire_barrier();
 		
-		// 7.调用dispatch_once的block
+		// 7.调用dispatch_once的block,在当前队列
 		_dispatch_client_callout(ctxt, func);
 
 		// The next barrier must be long and strong.
