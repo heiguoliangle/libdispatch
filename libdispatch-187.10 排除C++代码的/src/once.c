@@ -47,6 +47,7 @@ DISPATCH_NOINLINE
 void
 dispatch_once_f(dispatch_once_t *val, void *ctxt, dispatch_function_t func)
 {
+	// 这里直接修改指针地址,需要使用二维指针
 	struct _dispatch_once_waiter_s * volatile *vval =
 			(struct _dispatch_once_waiter_s**)val;
 	// 3. 地址类似于简单的哨兵位

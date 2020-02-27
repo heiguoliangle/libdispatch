@@ -50,8 +50,10 @@ DISPATCH_ALWAYS_INLINE
 static inline void
 _dispatch_trace_client_callout(void *ctxt, dispatch_function_t f)
 {
-	_dispatch_trace_callout(ctxt, f == _dispatch_call_block_and_release &&
+	_dispatch_trace_callout(ctxt,
+							f == _dispatch_call_block_and_release &&
 			ctxt ? ((struct Block_basic *)ctxt)->Block_invoke : f,
+							
 			_dispatch_client_callout(ctxt, f));
 }
 
